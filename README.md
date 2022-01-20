@@ -1,1 +1,1 @@
-# javaScript-password-generator
+# Javacript-Password-Generator
