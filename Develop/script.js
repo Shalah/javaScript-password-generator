@@ -50,24 +50,31 @@ function test(){
 
 function confirmedCharacters(){
   //Check this part later
-
+  console.log(usedCharacters)
   if (confirm("Click OK to confirm adding lowercase characters") == true) {
-    usedCharacters = lowerAlphabets;
+    usedCharacters += lowerAlphabets;
     console.log(usedCharacters)
   } 
   if (confirm("Click OK to confirm adding uppercase characters") == true) {
-    usedCharacters = upperAlphabets;
+    usedCharacters += upperAlphabets;
     console.log(usedCharacters)
   } 
   if (confirm("Click OK to confirm adding numeric characters") == true) {
-    usedCharacters = numbers;
+    usedCharacters += numbers;
     console.log(usedCharacters)
   } 
   if (confirm("Click OK to confirm adding special characters") == true) {
-    usedCharacters = symbols;
+    usedCharacters += symbols;
     console.log(usedCharacters)
   } 
-    
+  if (usedCharacters == 0 ){
+    alert("You have to pick one option at least")
+    test();
+  }
+  
+  // if (usedCharacters == lowerAlphabets || usedCharacters == upperAlphabets || usedCharacters == numbers || usedCharacters == symbols){
+  //   alert("You have to pick one option at least")
+  // }
   return usedCharacters;
 }
 
