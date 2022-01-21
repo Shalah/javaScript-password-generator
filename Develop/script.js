@@ -1,5 +1,6 @@
 // Assignment Code
-// console.log("Check if its linked")
+// console.log("Check if everything is linked")
+
 var lowerAlphabets = "abcdefghijklmnopqrstuvwxyz";
 var upperAlphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
@@ -18,7 +19,14 @@ function writePassword() {
 
 }
 
+function trackingUsedCharacters(){
+  if (userInputLength < 8 || userInputLength > 129){
+    alert("")
+  }
+}
+
 function test(){
+  // Using "Number()" will convert the string into number.
   var userInput = Number(prompt("How many characters would you like your password to contain?"))
   console.log(typeof userInput)
   if (userInput < 8){ 
@@ -32,6 +40,15 @@ function test(){
   else{
     userInputLength = userInput;
   }
+
+  //Check this part later
+
+  if (confirm("Click OK to confirm adding lower characters") == true) {
+    usedCharacters = lowerAlphabets;
+  } else {
+    
+  } //This part!!
+
   return;
 }
 
