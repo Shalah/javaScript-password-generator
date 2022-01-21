@@ -1,4 +1,12 @@
 // Assignment Code
+// console.log("Check if its linked")
+var lowerAlphabets = "abcdefghijklmnopqrstuvwxyz";
+var upperAlphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "0123456789";
+var symbols = "!@#$%^&*(),./;{}[]<>";
+var usedCharacters = "";
+var userInputLength = "";
+
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -10,18 +18,36 @@ function writePassword() {
 
 }
 
+function test(){
+  var userInput = Number(prompt("How many characters would you like your password to contain?"))
+  console.log(typeof userInput)
+  if (userInput < 8){ 
+    alert("Password length must be at least 8")
+    test();
+  }
+  else if (userInput > 129){
+    alert("Password length must less than 129")
+    test();
+  }
+  else{
+    userInputLength = userInput;
+  }
+  return;
+}
 
 
 //Added this
 function generatePassword(){
-  var alphabets = "abcdefghijklmnopqrstuvwxyz";
-  var numbers = "0123456789"
-  var character = "!@#$%^&*(),./;{}[]<>"
-  var passwordLength = 
+  var password = "";
+  
+  test();
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// document.getElementById("generate").addEventListener("click", test);
+
 
 
 /* 
@@ -43,4 +69,3 @@ THEN the password is either displayed in an alert or written to the page
 
 */
 
-if onclick
