@@ -7,6 +7,7 @@ var numbers = "0123456789";
 var symbols = "!@#$%^&*(),./;{}[]<>";
 var usedCharacters = "";
 var userInputLength = "";
+var randomPassword = "";
 
 var generateBtn = document.querySelector("#generate");
 
@@ -14,6 +15,13 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+
+  for(let i=0; i <= userInputLength.length; i++){
+    randomPassword += Math.floor(Math.random() * userInputLength[i])
+    console.log(userInputLength);
+
+    console.log(randomPassword);
+  }
 
   passwordText.value = password;
 
