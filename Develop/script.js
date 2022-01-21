@@ -28,7 +28,9 @@ function trackingUsedCharacters(){
 function test(){
   // Using "Number()" will convert the string into number.
   var userInput = Number(prompt("How many characters would you like your password to contain?"))
+  console.log(userInput)
   console.log(typeof userInput)
+
   if (userInput < 8){ 
     alert("Password length must be at least 8")
     test();
@@ -39,17 +41,34 @@ function test(){
   }
   else{
     userInputLength = userInput;
+    confirmedCharacters();
   }
 
+  return;
+}
+
+
+function confirmedCharacters(){
   //Check this part later
 
-  if (confirm("Click OK to confirm adding lower characters") == true) {
+  if (confirm("Click OK to confirm adding lowercase characters") == true) {
     usedCharacters = lowerAlphabets;
-  } else {
+    console.log(usedCharacters)
+  } 
+  if (confirm("Click OK to confirm adding uppercase characters") == true) {
+    usedCharacters = upperAlphabets;
+    console.log(usedCharacters)
+  } 
+  if (confirm("Click OK to confirm adding numeric characters") == true) {
+    usedCharacters = numbers;
+    console.log(usedCharacters)
+  } 
+  if (confirm("Click OK to confirm adding special characters") == true) {
+    usedCharacters = symbols;
+    console.log(usedCharacters)
+  } 
     
-  } //This part!!
-
-  return;
+  return usedCharacters;
 }
 
 
