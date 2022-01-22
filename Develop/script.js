@@ -16,13 +16,18 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  for(let i=0; i <= userInputLength.length; i++){
-    randomPassword += Math.floor(Math.random() * userInputLength[i])
-    console.log(userInputLength);
+  // console.log(userInputLength);
 
-    console.log(randomPassword);
+  for(let i=0; i <= userInputLength; i++){
+    randomPassword += usedCharacters.charAt(Math.floor(Math.random() * userInputLength[i]))
+    //console.log(userInputLength);
+
+    return randomPassword;
+    console.log(password);
   }
-
+  password = randomPassword;
+  console.log(password);
+  console.log(randomPassword);
   passwordText.value = password;
 
 }
@@ -58,7 +63,7 @@ function test(){
 
 function confirmedCharacters(){
   //Check this part later
-  console.log(usedCharacters)
+  //console.log(usedCharacters)
   if (confirm("Click OK to confirm adding lowercase characters") == true) {
     usedCharacters += lowerAlphabets;
     console.log(usedCharacters)
@@ -79,7 +84,7 @@ function confirmedCharacters(){
     alert("You have to pick one option at least")
     test();
   }
-  
+  //console.log(usedCharacters)
   // if (usedCharacters == lowerAlphabets || usedCharacters == upperAlphabets || usedCharacters == numbers || usedCharacters == symbols){
   //   alert("You have to pick one option at least")
   // }
